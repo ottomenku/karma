@@ -1,6 +1,4 @@
 <?php
-use eftec\bladeone\BladeOne;
-
 class spiri
 {
 $kapjo=0;
