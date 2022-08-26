@@ -1,9 +1,7 @@
 <?php
-use eftec\bladeone\BladeOne;
+use Jenssegers\Blade\Blade;
+$blade = new Blade('views', 'cache');
 
-$views = __DIR__ . '/views';
-$cache = __DIR__ . '/cache';
-$blade = new BladeOne($views,$cache,BladeOne::MODE_DEBUG); // MODE_DEBUG allows to pinpoint troubles.
-echo $blade->run("base2",array("spiriszam"=>"value1")); // it calls /views/hello.blade.php
+echo $blade->make('homepage', ['name' => 'John Doe'])->render();
 
 ?>
