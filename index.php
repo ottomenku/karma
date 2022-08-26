@@ -49,9 +49,11 @@ $nepessegtomb=$data['nepesseg'];
 
  teremt();
  futtat();
- $views = __DIR__ . '/views';
- $cache = __DIR__ . '/cache';
- $blade = new BladeOne($views,$cache,BladeOne::MODE_DEBUG); // MODE_DEBUG allows to pinpoint troubles.
- echo $blade->run("base",$data); // it calls /views/hello.blade.php
+
+print_r($data);
+// $views = __DIR__ . '/views';
+// $cache = __DIR__ . '/cache';
+ //$blade = new BladeOne($views,$cache,BladeOne::MODE_DEBUG); // MODE_DEBUG allows to pinpoint troubles.
+ //echo $blade->run("base",$data); // it calls /views/hello.blade.php
 
 ?>
