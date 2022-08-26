@@ -45,8 +45,8 @@ $nepessegtomb=$data['nepesseg'];
  }
 } 
 
- teremt();
- futtat();
+ //teremt();
+ //futtat();
 
 print_r($data);
 // $views = __DIR__ . '/views';
