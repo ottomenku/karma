@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+
+</head> 
+<body>
+
+<div class="col-10 offset-md-1" >
+  <div style="background-color:blue" > <br> <center><h3 style="color: white;">Packing alapanyag hibák, és kezelésük: </h3></center><br>
+</div>
+<!-- fomenu--->
+<br>
+<nav class="nav nav-pills flex-column flex-sm-row">
+  <a class=" fomenu flex-sm-fill text-sm-center nav-link active" aria-current="page" href="index.html">Hiba tipusok</a>
+ <!-- <a id="db" onclick="uzenet()" class="fomenu flex-sm-fill text-sm-center nav-link" href="db.html">Display box </a> -->
+ <a id="db"  class="fomenu flex-sm-fill text-sm-center nav-link" href="db.html">Display box </a>
+ <a class="fomenu flex-sm-fill text-sm-center nav-link" href="ms.html">Master shiper</a>
+  <a class="fomenu flex-sm-fill text-sm-center nav-link" href="insert.html">Insert</a>
+  <a class="fomenu flex-sm-fill text-sm-center nav-link" href="eps.html">Eps</a>
+  <a class="fomenu flex-sm-fill text-sm-center nav-link" href="alert.html">Alert írás</a>
+</nav>
+
+
+  <script>
+    function uzenet() {
+$(".fomenu").removeClass( "active" );      
+$("#db").addClass( "active" );
+     alert('heloo') ;
+    }
+    
+  </script>
+<!-- szállítási hibák --->
+
+<br><center><h4> szállítási, raktári hibák:</h4></center>
+Könnyen kíszúrhető hibák, általában sérülés vagy beázás.  
+<br><b>akció:</b> Lehetőség szerint még a paletta felbontása előtt rögzíteni a hibát (Fotó). Ha 20 euro  fölötti ahibás termék értéke (kb) scrapra helyezni, ha kevesebb kidobni. Alert írás. Ha nincs idó vagy lehetőség válogatni, és van másik paletta amivel lehet a termelést folytani, vissza lehet utasítani.
+<!-- gyártási  hibák --->
+<center><h4>Gyártási  hibák:</h4> </center>
+
+<h5>Beállási - kifutási hiba:</h5> 
+Pl.,  Roszzul vagy egyáltalán nem ragasztott,vagy  összeragadt  dobozok, festékes, festékhiányos, gyúrött, roszsul kivágott,stb. hibák. Közös jellemzőjük. hogy egy csoportban vannak álltalában a paletta végén, ami a gyártónak az eleje. Gyártás induláskor még nem volt rendesen beállítva a gép, nem volt elég meleg a ragasztó stb. Vagy lehet a palettá közepén is akár ha pl kifogyott a ragasztó és nem vették észre. Ezeket persze ki kellene hogy dobják mikor észre veszik de ez nem mindig történik meg.  Lényeg az hogy egy rakáson vannak a hibák és előtte is meg utána is jó az alapanyag.
+<br><b>akció:</b> ha csak pár darabról van szó és nem okozott stoppot nem kerülhetett bele a késztermékbe, egyszerúen ki kell dobni.Ha komolyabb tétel vgy egyéb problénmát is okozott alert írás QCI értesítése
+
+<h5>Nem specifikáció szerint készült:</h5> 
+Méret, súly nyomtatási, ragasztási egyéb probláma ami alapján az alapanyag nem felel meg a specifikációnak, vagy nem gyártaható belőle megfelelőminőségú termék. 
+<br><b>Akció:</b> Megállapítani a hiba gyakoriságát. Minta vétel a paletta legalább 3 részéról, eleje-közepe-vége.
+<br>	a, minden darab rossz: ez az egyszerúbb eset. QCI döntés és kockázat -veszteség mérlegelés alapján, vagy felhasználjuk vagy visszautasítjuk az alapanyagot. Alert írás. 
+<br>	b, néhány darabnál jelentkezik a hiba: Lényegében itt is kockázat -veszteség mérlegelés sükséges 
+De a mérlegelési szempontba annak is szerepelnie kell hogy  kiszúrhető e a hiba, mennyi stopppot plusz munkát okozhat. Plusz érdemes az MPD-t külön is értesíteni, mert ezek a tipusú hibák azt jelzik, hogy a gyártó a lehetőságei határán dolgozik. Nem képes egyenletes minóséget biztostani.  Érdemes kivizsgálni akár egy design akár egy beszállító váltás lehetőségét. 
+<!-- Hibátlan nem gyártható alapanyag--->
+<h5>Specifikáció szerinti, de problémás alapanyag:</h5> 
+Sokszor előfordul hogy nem tudunk valamit megfelelően legyártani és akkor mindjárrt születik egy elmélet hogy az alapanyag méret hibás rossz ragsztású, nem jó papírból van túl száraz vagy épp túl nedves, Előfordulhat hogy a specifikációnak megfelel az alapanyag, a gépek is hiba nélkül működnek, minden base kondítionban van mégis begyúri, felszakitja, rosszul ragasztja stb. Ilyenkor hajlamosak vagyunk dobni egy alertet hogy rossz az alapanyag. Pedig ha az első lépésekben kiderült hogy az alapnyag megfelel a specinek. akkor azt jóként kell elfogadni. Hiszen olyat kértünk. Ha mégsem tudunk vele dolgozni akkor vagy a specifikáción kell változtani, hogy olyat kérjünk amivel tudunk, vagy a képességeinken. Gépfejlesztés trainingelés stb...
+<br><b>Akció:</b> Probléma felderítése: 6W2H, Y-Y analízis stb MPD, Techub, termelés vezetés bevonása.
+
+<!-- out of spec vége --->
+
+<div style="margin:20px; background-color:blue" > <br> <center><a style="color: white;" href = "mailto:CNF-GYO-MPD@groups.pg.com?subject=Feedback_hibatipusok&body=Szerintem..">
+  Ha észrevételed van ezekkel kpcolatban ide kattintva adhatsz visszajelzést
+  </a></center><br>
+</div>
+
+
+
+	</div>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
