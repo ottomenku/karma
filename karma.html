@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Karma tszt</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="karma.js"></script>
+
+</head>
+
+<body>
+    <style>
+        table.table-fit {
+            width: auto !important;
+            table-layout: auto !important;
+        }
+        
+        table.table-fit thead th,
+        table.table-fit tbody td,
+        table.table-fit tfoot th,
+        table.table-fit tfoot td {
+            width: auto !important;
+        }
+    </style>
+
+    <h2>Karma szimuláció</h2>
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Population</span>
+                </div>
+                <input type="text" id="pop" value="3" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="input-group sm-2">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Cycle</span>
+                </div>
+                <input type="text" id="cyc" value="3" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="input-group sm-2">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Action</span>
+                </div>
+                <input type="text" id="act" value="3" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+        </div>
+
+        <div class="col-sm-1">
+            <button type="button" onclick="start()" class="btn btn-primary">Start</button>
+        </div>
+        <div class="col-sm-2">
+            <button type="button" onclick="reset()" class="btn btn-danger">Reset</button>
+        </div>
+    </div>
+
+    </br>
+    </br>
+    <div class="row">
+        <div id="tablediv" class="col-sm-10">
+
+
+        </div>
+    </div>
+</body>
+
+</html>
