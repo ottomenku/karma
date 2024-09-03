@@ -1,8 +1,52 @@
 function reset() {
     // alert('reset');
-    karmatomb = {};
+    // karmatomb = {};
     $("#tablediv").html('');
+    table_draw();
 }
+
+function people() {
+    let ret = []
+    ret[0] = Math.floor(Math.random() * population); //person
+    ret[1] = Math.floor(Math.random() * action); //act
+    return ret;
+}
+
+
+
+function cycle_run() {
+    for (let i = 0; i < cycle; i++) {
+        act_people = Math.floor(Math.random() * population + 1); //person
+        res = people();
+        ad_div_id = act_people + '_' + res[1] + '_adkap';
+        kap_div_id = res[0] + '_' + res[1] + '_adkap';
+        beir(ad_div_id, -1);
+        beir(kap_div_id, 1);
+        // a_action = people()[1];
+    } // console.log(a_action);
+}
+
+
+
+function beir(div_id, val) {
+
+    value = baseval_toint($('#' + div_id).text());
+    beirval = value + val;
+    $('#' + div_id).text(beirval);
+    if (beirval == 0) { $('#' + div_id).css('background-color', 'green'); } else if (beirval < 0) { $('#' + div_id).css('background-color', 'red'); } else { $('#' + div_id).css('background-color', 'blue'); }
+
+}
+
+function baseval_toint(val) {
+    if (val == 'n/a') { return 0; } else {
+        return parseInt(val);
+    }
+}
+
+function karma_ok() {
+
+}
+
 
 function base_set() {
     // alert(document.getElementById("pop").value);
@@ -15,9 +59,15 @@ function base_set() {
         population = spop;
         action = sact;
         reset();
-        //  alert(cycle);
+        table_draw()
     }
 
+}
+
+function start() {
+    base_set();
+    //table_draw();
+    cycle_run();
 }
 
 function table_draw() {
@@ -26,11 +76,12 @@ function table_draw() {
     tabletext = tabletext + '<th >sn  </th>';
     for (let i = 0; i < action; i++) {
         if (i % 2 == 0) {
-            tabletext = tabletext + '<th>';
+            tabletext = tabletext + '<th class="table-info">';
         } else {
-            tabletext = tabletext + '<th class="table-dark">';
+            // tabletext = tabletext + '<th class="table-dark">';
+            tabletext = tabletext + '<th class="table-secondary">';
         }
-        tabletext = tabletext + '#' + i + ' ' + actions[i].name + ' <span color="' + actions[i].color + '">' + actions[i].icon + '</span> </th> ';
+        tabletext = tabletext + actions[i].name + '<span style=" color:' + actions[i].color + '">' + actions[i].icon + '</span> </th> ';
     }
     tabletext = tabletext + '<th> Karma Ok?  </th>';
 
@@ -41,7 +92,7 @@ function table_draw() {
         tabletext = tabletext + ' <tr>';
         tabletext = tabletext + '<td> ' + poptomb[pop_i] + ' </td>';
         for (let act_i = 0; act_i < action; act_i++) {
-            tabletext = tabletext + '<td> <div id="' + pop_i + '_' + act_i + '_adkap">n/a</div> </td> ';
+            tabletext = tabletext + '<td> <div style="" id="' + pop_i + '_' + act_i + '_adkap">n/a</div> </td> ';
             //  tabletext = tabletext + '<td> <div id="' + pop_i + '_' + act_i + 'kap"></div> </td> ';
         }
         tabletext = tabletext + '<td> <div id="' + pop_i + '_karmaok"></div> </td>';
@@ -54,13 +105,7 @@ function table_draw() {
     $("#tablediv").html(tabletext);
 }
 
-function start() {
-    base_set();
-    // set_karmatomb();
-    //  actin_general();
-    table_draw()
 
-}
 
 function set_karmatomb() {
     for (let i = 0; i < population; i++) {
@@ -70,24 +115,3 @@ function set_karmatomb() {
         }
     }
 }
-
-function actin_general() {
-    // Returns a random integer from 0 to 9:
-    person = Math.floor(Math.random() * population + 1);
-    act = Math.floor(Math.random() * action + 1);
-
-
-    // Object.defineProperty(karmatomb, 'kap', { //using Object.defineProperty() method of JavaScript object class 
-    //     value: act,
-    //     writable: true //configured writable property as true, and hence, the name property of object obj can be changed now
-    // });
-
-    console.log(karmatomb);
-}
-
-//for (let i = 0; i < cycle; i++) {
-// text += "<li>" + fruits[i] + "</li>";
-//}
-//text += "</ul>";
-
-//   document.getElementById("demo").innerHTML = "Car: " + car;
